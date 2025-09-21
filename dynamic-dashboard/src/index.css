@@ -171,3 +171,32 @@ button.danger:hover {
     padding: 16px;
   }
 }
+:root {
+  --bg: #f9fafb;
+  --text: #333;
+  --card-bg: #fff;
+  --border: #e5e7eb;
+  --primary: #2563eb;
+  --danger: #ef4444;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.card,
+.section,
+.modal {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+}
+
+.dark {
+  --bg: #111827;
+  --text: #f3f4f6;
+  --card-bg: #1f2937;
+  --border: #374151;
+  --primary: #3b82f6;
+  --danger: #f87171;
+}
