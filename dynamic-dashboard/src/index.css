@@ -1,71 +1,67 @@
-/* Reset & Base */
-* {
-  box-sizing: border-box;
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9fafb;
+  color: #333;
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: 'Segoe UI', Roboto, sans-serif;
-  background-color: #f9fafb;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* Container */
 .container {
   max-width: 960px;
   margin: 0 auto;
   padding: 24px;
 }
 
-/* Section Blocks */
 .section {
+  margin-bottom: 32px;
+}
+
+.dashboard-section {
   background-color: #fff;
   padding: 20px;
-  margin-bottom: 32px;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 32px;
 }
 
-.section h2 {
+.dashboard-section h2 {
   font-size: 22px;
-  margin-bottom: 16px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 8px;
+  margin-bottom: 8px;
 }
 
-/* Form Elements */
-input,
-select,
-textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.card p {
   font-size: 14px;
+  color: #555;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
-}
-
-/* Buttons */
 button {
   background-color: #2563eb;
   color: white;
-  padding: 10px 20px;
-  font-size: 14px;
+  padding: 8px 16px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  margin-top: 12px;
 }
 
 button:hover {
@@ -80,123 +76,151 @@ button.danger:hover {
   background-color: #dc2626;
 }
 
-/* Grid Layout */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-/* Widget Card */
-.card {
+.widget-panel {
   background-color: #fff;
-  padding: 16px;
+  padding: 20px;
+  margin-bottom: 32px;
   border-radius: 8px;
   border: 1px solid #e5e7eb;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.2s ease;
 }
 
-.card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+.widget-panel h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
 }
 
-.card h3 {
-  margin-bottom: 8px;
-  font-size: 18px;
+.widget-panel select,
+.widget-panel input,
+.widget-panel textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
-.card p {
-  font-size: 14px;
-  color: #555;
-}
-
-/* Modal */
-.modal {
-  background-color: #fff;
-  padding: 24px;
+.alert-panel {
+  background-color: #f3f4f6;
+  padding: 16px;
   border-radius: 8px;
-  max-width: 500px;
-  margin: 0 auto;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 1px dashed #ccc;
+  text-align: center;
+  color: #666;
+}
+.dashboard-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
   border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  margin-bottom: 32px;
 }
 
-/* Search Results */
-.search-results h3 {
-  font-size: 16px;
-  margin-bottom: 4px;
+.dashboard-card h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px;
+}
+.add-widget-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #2563eb;
+  border: 2px dashed #2563eb;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  height: 160px;
 }
 
-.search-results ul {
-  list-style: disc;
-  padding-left: 20px;
-  font-size: 14px;
-  color: #444;
+.add-widget-card:hover {
+  background-color: #eef2ff;
 }
 
-/* Checkbox List */
-.checkbox-list {
-  list-style: none;
-  padding: 0;
+.plus-icon {
+  font-size: 48px;
+  line-height: 1;
 }
 
-.checkbox-list li {
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
+  justify-content: center;
+  z-index: 999;
 }
 
-.checkbox-list input[type="checkbox"] {
-  accent-color: #2563eb;
-}
-
-/* Toast Container (optional if using react-hot-toast) */
-.react-hot-toast {
-  font-size: 14px;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .container {
-    padding: 16px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .modal {
-    padding: 16px;
-  }
-}
-:root {
-  --bg: #f9fafb;
-  --text: #333;
-  --card-bg: #fff;
-  --border: #e5e7eb;
-  --primary: #2563eb;
-  --danger: #ef4444;
-}
-
-body {
-  background-color: var(--bg);
-  color: var(--text);
-}
-
-.card,
-.section,
 .modal {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border);
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  width: 420px;
+  max-width: 90%;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease;
 }
 
-.dark {
-  --bg: #111827;
-  --text: #f3f4f6;
-  --card-bg: #1f2937;
-  --border: #374151;
-  --primary: #3b82f6;
-  --danger: #f87171;
+.modal-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #f9fafb;
+}
+
+.modal-field:focus {
+  outline: none;
+  border-color: #2563eb;
+  background-color: #fff;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.tabs button {
+  padding: 8px 16px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+}
+
+.tabs .active {
+  background: #2563eb;
+  color: white;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.plus-icon {
+  font-size: 18px;
+  margin-right: 6px;
 }
