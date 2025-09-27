@@ -224,3 +224,17 @@ button.danger:hover {
   font-size: 18px;
   margin-right: 6px;
 }
+.search-bar {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.search-bar input {
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 300px;
+  background-color: #f9fafb;
+}
